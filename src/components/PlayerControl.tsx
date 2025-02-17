@@ -18,6 +18,7 @@ const PlayerControl = ({ Src }: { Src: string }) => {
     if (audio) {
       setMainAudio(audio.current);
       audio.current.pause();
+      setPlaying(false);
     }
   }, [audio, Src]);
 
@@ -43,9 +44,9 @@ const PlayerControl = ({ Src }: { Src: string }) => {
   };
 
   const handlePlay = () => {
-    if (playing) {
+    if (playing && mainAudio) {
       mainAudio.pause();
-    } else {
+    } else if (!playing && mainAudio) {
       mainAudio.play();
     }
   };
