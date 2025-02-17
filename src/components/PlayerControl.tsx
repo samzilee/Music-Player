@@ -17,8 +17,7 @@ const PlayerControl = ({ Src }: { Src: string }) => {
   useEffect(() => {
     if (audio) {
       setMainAudio(audio.current);
-      audio.current.play();
-      setPlaying(true);
+      audio.current.pause();
     }
   }, [audio, Src]);
 
