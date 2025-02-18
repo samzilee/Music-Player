@@ -22,23 +22,25 @@ import LoveHurtsPoster from "./assets/Pics/Just look at the way she's looking at
 import TooMuchPride from "./assets/Musics/424kp-Too Much Pride.mp3";
 import TooMuchPridePoster from "./assets/Pics/Too much Pride.jpeg";
 
+//Love Yourself
+import LoveYourself from "./assets/Musics/Love Yourself - Justin Bieber (Lyrics) 🎵.mp3";
+import LoveYourselfPoster from "./assets/Pics/Small Things to Bring A Daily Dose of Joy — Oui We.jpeg";
+
 const App = () => {
   const [selection, setSelection] = useState<any>({
-    src: LoveHurts,
-    title: "Love Hurts",
-    by: "Lil Tjay, Toosii",
-    poster: LoveHurtsPoster,
-    posterColorPixelTrail: "#ffc0cb",
+    src: LoveYourself,
+    title: "Love Yourself",
+    by: "Justin Bieber",
+    poster: LoveYourselfPoster,
   });
 
   const musicCollection: object[] = [
     {
       id: 1,
-      src: FineChina,
-      title: "Fine China",
-      by: "Juice Wrld",
-      poster: FineChinaMusicPoster,
-      posterColorPixelTrail: "#00d8ff",
+      src: LoveYourself,
+      title: "Love Yourself",
+      by: "Justin Bieber",
+      poster: LoveYourselfPoster,
     },
 
     {
@@ -47,7 +49,6 @@ const App = () => {
       title: "Revenge",
       by: "XXXTENTACION",
       poster: RevengeMusicPoster,
-      posterColorPixelTrail: "#cbcbcb",
     },
     {
       id: 3,
@@ -55,7 +56,6 @@ const App = () => {
       title: "Meet You At The Graveyard",
       by: "Cleffy",
       poster: MeetYouAtTheGraveyardPoster,
-      posterColorPixelTrail: "#cbcbcb",
     },
     {
       id: 4,
@@ -63,7 +63,6 @@ const App = () => {
       title: "Love Hurts",
       by: "Lil Tjay, Toosii",
       poster: LoveHurtsPoster,
-      posterColorPixelTrail: "#ffc0cb",
     },
     {
       id: 5,
@@ -71,7 +70,13 @@ const App = () => {
       title: "Too Much Pride",
       by: "424KP",
       poster: TooMuchPridePoster,
-      posterColorPixelTrail: "#f8f8ff",
+    },
+    {
+      id: 6,
+      src: FineChina,
+      title: "Fine China",
+      by: "Juice Wrld",
+      poster: FineChinaMusicPoster,
     },
   ];
 
@@ -85,7 +90,7 @@ const App = () => {
       const playingIcon: any = document.getElementById(selection.title);
       if (playingIcon) {
         playingIcon.style.opacity = "1";
-        playingIcon.style.scale = "1.2";
+        playingIcon.style.scale = "1.1";
       }
     }
   }, [selection]);
@@ -101,14 +106,14 @@ const App = () => {
 
   return (
     <main className="h-full w-full bg-gray-900 text-white flex justify-center items-center flex-col gap-5">
-      <section className=" border-[2px] rounded-[20px] border-gray-700 w-[90%] h-fit py-2 px-5 flex justify-center">
-        <ul className="w-full flex justify-center gap-5">
+      <section className=" border-[2px] rounded-[20px] border-gray-700 w-[90%] h-fit py-2 px-1 flex justify-center">
+        <ul className="w-full flex justify-center gap-3 ">
           {musicCollection.map((music: any) => {
             return (
               <li
                 key={music.title}
                 id={music.title}
-                className="w-[50px] h-[50px] rounded-full overflow-hidden transition-all duration-[0.5s] cursor-pointer"
+                className="md:w-[50px] md:h-[50px] w-[40px] h-[40px] rounded-full overflow-hidden transition-all duration-[0.5s] cursor-pointer"
                 onClick={() => {
                   handleSelection(music.id);
                 }}
