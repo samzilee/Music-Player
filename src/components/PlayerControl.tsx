@@ -19,6 +19,7 @@ const PlayerControl = ({ Src }: { Src: string }) => {
       setMainAudio(audio.current);
       audio.current.pause();
       setPlaying(false);
+      setMaxDuration("0:00");
     }
   }, [audio, Src]);
 
